@@ -50,6 +50,7 @@ function determineWinner(userChoice, computerChoice) {
       return `${outcomes[1]} Computer wins!`
     }
   }
+  return `You chose You didn't chose a valid option!`
 }
 function playGame() {
   let promptUserChoice = prompt("Please choose bear, human or gun");
