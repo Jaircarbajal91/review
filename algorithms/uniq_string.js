@@ -36,8 +36,6 @@ function unique(string) {
     }
       return true;
   }
-
-  // return true
 }
 console.log(unique('paper'))
 console.log(unique('yes'))
