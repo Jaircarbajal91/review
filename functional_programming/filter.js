@@ -38,4 +38,4 @@ var sunnyDays = forecast.filter((day) => {
   return day.sun
 })
 
-console.log(sunnyDays)
+// console.log(sunnyDays)
