@@ -3,4 +3,3 @@
 
   We would want to use const when we wouldn't want to alter the value of our variable. Something like an API key should be declared using const so that other code will not alter the value.
  */
-

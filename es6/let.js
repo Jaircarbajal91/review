@@ -33,3 +33,4 @@ if (word) {
   let otherWord2 = 'word1'
 }
 // console.log(word2 + ' ' + otherWord2) // throws an error
+
