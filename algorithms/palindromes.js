@@ -58,4 +58,5 @@ const palindrome = function(str) {
   }
   return true;
 }
+
 // console.log(palindrome())
