@@ -87,5 +87,25 @@ const alphaOrder1 = (str) => {
 
 }
 
-console.log(alphaOrder1('hello'))
-console.log(alphaOrder1('goodbye'))
+// console.log(alphaOrder1('hello'))
+// console.log(alphaOrder1('goodbye'))
+
+const palindrome = (str) => {
+  str = str.replace(/\W/g, '').toLowerCase();
+  for (let i = 0; i < str.length / 2; i++) {
+    let head = str[i];
+    let tail = str[str.length - 1 - i];
+    if (head !== tail) {
+      return false;
+    }
+  }
+  return true;
+}
+
+let pal1 = 'Eva, Can I Stab Bats In A Cave?';
+let pal2 = 'Was It A Rat I Saw?'
+let pal3 = 'A nut for a jar of tuna?'
+// console.log(palindrome(pal1))
+// console.log(palindrome(pal2))
+// console.log(palindrome(pal3))
+
