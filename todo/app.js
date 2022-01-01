@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const todoList = document.querySelector('ul')
   const button = document.querySelector('button')
 
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     toDoMaker(input.value);
@@ -14,12 +15,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const toDoMaker = (text) => {
     let todo = document.createElement('li');
     todo.textContent = text;
+    let radioButton = createCheckMarkElement('todo-radio', false);
+    todo.appendChild(radioButton);
     todoList.appendChild(todo)
   }
 
+  const createCheckMarkElement = (name, checked) => {
+    var radioHtml = '<input type="checkbox" name="' + name + '"';
+    if (checked) {
+      radioHtml += ' checked="checked"';
+    }
+    radioHtml += '/>';
+    var radioFragment = document.createElement('div');
+    radioFragment.innerHTML = radioHtml;
+    return radioFragment.firstChild
+  }
+
+
   button.addEventListener('click', (e) => {
-    // while there are items in todoList
-    // removeChild
     while (todoList.hasChildNodes()) {
       todoList.removeChild(todoList.firstChild);
     }
