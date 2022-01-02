@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const input = document.getElementById('user-todo')
   const todoList = document.querySelector('ul')
   const button = document.querySelector('button')
-  const checkbox = document.querySelector("input[name=checkbox]");
-
 
   const todosArray = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
   localStorage.setItem('todos', JSON.stringify(todosArray))
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     localStorage.setItem('todos', JSON.stringify(todosArray))
     toDoMaker(input.value);
     input.value = '';
-    console.log(localStorage)
   })
 
   const removeItemFromLocalStorage = (value) => {
@@ -37,14 +34,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     return radioFragment.firstChild
   }
 
-  // makes li tags and appends them to todoList
   const toDoMaker = (text) => {
     let todo = document.createElement('li');
     todo.textContent = text;
     let radioButton = createCheckMarkElement('todo-radio', false);
     radioButton.addEventListener('change', (e) => {
       removeItemFromLocalStorage(todo.textContent)
-      // console.log(todo.textContent)
       todo.remove();
     })
     todo.appendChild(radioButton);
